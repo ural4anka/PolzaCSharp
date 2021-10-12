@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <p>Сортировка Пузырьком</p>
+            <code>
+                Random r = new Random();<br>
+                int n = 10;<br>
+                int v = n;<br>
+                int[] array = new int[n];<br>
+                for (int i = 0; i < n; i++)<br>
+                {<br>
+                    //убери коментарий, если нужно вести значения вручную<br>
+                    /*Console.WriteLine($"Введите значение");<br>
+                    array[i] = Convert.ToInt32(Console.ReadLine());<br>
+                    Console.WriteLine();*/<br>
+                    array[i] = r.Next(-10, 11);<br>
+                    Console.Write($"[{ i}]={ array[i]}; ");<br>
+                }<br>
+                Console.WriteLine();<br>
+                Console.WriteLine($"Сортировка пузырьком");<br>
+                //Переменные для сортировки<br>
+                int a = 0;<br>
+                int b = 0;<br>
+                //переменная отвечающая за этап сортировки<br>
+                int e = 1;<br>
+                //провереть весь массив от сортировался<br>
+                while(n != 1)<br>
+                {<br>
+                    int count = 0;<br>
+                    Console.WriteLine();<br>
+                    Console.WriteLine($"Этап {e} сортировки");<br>
+                    //меняем местами меньший влево больший вправо<br>
+                    for(int i =0; i<n; i++)<br>
+                    {<br>
+                        if (i != n-1)<br>
+                        {<br>
+                            int j = i + 1;<br>
+                            if (array[i] > array[j])<br>
+                            {<br>
+                                a = array[i];<br>
+                                b = array[j];<br>
+                                array[i] = b;<br>
+                                array[j] = a;<br>
+                            }<br>
+                        }<br>
+                    }<br>
+                    //выводим по этапно отсортированный массив<br>
+                    for (int i = 0; i < n; i++)<br>
+                    {<br>
+                        Console.Write($"[{i}]={ array[i]}; ");<br>
+                    }<br>
+                    //увеличиваем переменную этап<br>
+                    e++;<br>
+                    //проверка последнего элемента на самое большое значение из оставшихся элементов<br>
+                    for (int i = 0; i < n; i++)<br>
+                    {<br>
+                        //последний элемент не должен проверяться, проверяются только перед последним элементом<br>
+                        if(i != n - 1)<br>
+                        {<br>
+                            //проверка последовательно на, то больше или равен ли последний элемент, текущего в цикле<br>
+                            if (array[n - 1] >= array[i])<br>
+                            {<br>
+                                count++;<br>
+                            }<br>
+                        }<br>
+                    }<br>
+                    //если последний элемент больше по значению, чем все другие элементы, то последний элемент отсекатся и последним элементом становится предыдущий элемент<br>
+                    if (count == n - 1)<br>
+                    {<br>
+                        n--;<br>
+                    }<br>
+                }<br>
+                //вывод отсортированного массива<br>
+                Console.WriteLine();<br>
+                for (int i = 0; i < v; i++)<br>
+                {<br>
+                    Console.Write($"[{i}]={ array[i]}; ");<br>
+                }<br>
+                Console.ReadLine();<br>
+            </code>
+        </li>
+    </ul>
+</body>
+</html>
