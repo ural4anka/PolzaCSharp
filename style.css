@@ -28,8 +28,16 @@ a {
     color: #000;
 }
 
-.op {
+.main {
     display: flex;
+}
+
+.massiv1{
+    width: 50%;
+}
+
+.massiv2{
+    width: 50%;
 }
 
 .do-while {
