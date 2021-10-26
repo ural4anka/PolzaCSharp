@@ -27,16 +27,24 @@ a {
     text-decoration: underline;
     color: #000;
 }
+.box{
+    margin: 40px;
+    border: #000 2px solid;
+    padding: 20px 20px 60px 20px;
+}
 
 .main {
     display: flex;
 }
 
-.massiv1{
-    width: 50%;
+.number_page{
+    color: #000;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
 }
 
-.massiv2{
+.massiv1, .massiv2, .page1-1, .page1-2{
     width: 50%;
 }
 

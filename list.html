@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с классом List | Динамические массивы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 align="center">Работа с классом List | Динамические массивы</h1>
+    <div class="main">
+        <div class="list">
+            <p>Сначало нужно подключить библиотеку Generic</p>
+            <pre>
+        using System.Collections.Generic;
+            </pre>
+            <p>Реализация деннамического списка | массива</p>
+            <pre>
+        List<тип данных> название_списка = new List<тип данных>(){
+            значения
+        };
+            </pre>
+            <p>Пример:</p>
+            <pre>
+        List<int> numbers = new List<int>(){
+            4, 6, 7
+        };
+            </pre>
+            <p>Вывод динамического массива</p>
+            <pre>
+        foreach(int el in numbers){
+            Console.WriteLine("EL:" + el);
+        }
+            </pre>
+        </div>
+        <div class="metod">
+            <p>Методы работы с классом List</p>
+            <p>Добавление:</p>
+            <pre>numbers.Add(40);</pre>
+            <P>Удаление:</P>
+            <pre>numbers.Remove(40);</pre>
+            <p>Сортировка массива:</p>
+            <pre>numbers.Sort();</pre>
+            <p>Реверс(перевернуть):</p>
+            <pre>numbers.Reverse();</pre>
+            <p>Очистка массива:</p>
+            <pre>numbers.Clear();</pre>
+        </div>
+    </div>
+    <footer>
+        <a href="index.html">
+            <div class="exit">
+                ВЕРНУТЬСЯ НА ГЛАВНУЮ
+            </div>
+        </a>
+    </footer>
+</body>
+</html>
