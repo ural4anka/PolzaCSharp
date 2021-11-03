@@ -9,7 +9,101 @@
 </head>
 <body>
     <h1 align="center">Создание классов и объектов</h1>
-    
+    <p>Классы можно создавать, как в одном документе, так и в отдельном файле</p>
+    <p>Создание класса в новом документе: Проект/Добавление класса.../ Выбираем тип файла и нажимаем на кномпку "добавить"</p>
+    <p>Структура файла:</p>
+    <pre>
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    namespace ConsoleApp3
+    {
+        class Robot
+        {
+
+        }
+    }
+    </pre>
+    <hr>
+    <p>Модификаторы доступа:</p>
+    <ul>
+        <li>
+            <p>public - доступ везде</p>
+        </li>
+        <li>
+            <p>protected - доступ исключительно в классе объявления и в классах наследования </p> 
+        </li>
+        <li>
+            <p>private - доступ исключительно в классе объявления</p>
+        </li>
+    </ul>
+    <p>Дополнительные модификаторы доступа:</p>
+    <ul>
+        <li>
+            <p>Добавить в дальнейшем...</p>
+        </li>
+    </ul>
+    <hr>
+    <p>Создание полей</p>
+    <pre>модификатор_доступа тип_поля название_поля = значение_поля;</pre>
+    <p>Пример:</p>
+    <pre>
+        public int id;
+        public string name;
+        public int weight;
+        public byte[] coordinates;
+    </pre>
+    <p>Полем называется переменная, которая создана внутри класса, а переменная вне класса</p>
+    <hr>
+    <p>Создание ОБЪЕКТА</p>
+    <pre>название_класса название_объекта = выделение_памяти_для_объекта();</pre>
+    <p>Пример:</p>
+    <pre>
+        Robot bot = new Robot();
+        bot.id = 0;
+        bot.name = "Bot";
+        bot.weight = 800;
+        bot.coordinates = new byte[] {0,0,0};
+
+        Console.WriteLine(bot.name + "weight" + bot.weight);
+    </pre>
+    <p>Объект создается внутри основного класса</p>
+    <hr>
+    <p>Работа с модификатором доступа private | protected</p>
+    <p>Чтобы объект обратился к полю с доступом private | protected, нужно использовать МЕТОДЫ</p>
+    <p>Создание методов:</p>
+    <pre>
+        модификатор_доступ ключевое_слово(можно не использовать) тип_возвращения(если метод не будет ничего возврачать, то пишем void) название(тип_параметра нахвание_параметра (принимаемые параметры)){
+            действие
+        }
+    </pre>
+    <p>Пример:</p>
+    <pre>
+        class Robot{
+            private string name;
+            private int weight;
+            private byte[] coordinates;
+
+            public void setValue(string _name, int _weight, byte[] _coordinates){
+                name = _name;
+                weight = _weight;
+                coordinates = _coordinates;
+            }
+
+            public void printValue(){
+                Console.WriteLine(name + "weight" + weight + ", coordinates:");
+                foreach(byte el in coordinates){
+                    Console.WriteLine(el)
+                }
+            }
+        }
+        class Main(){
+            Robot bot = new Robot();
+            bot.setValue("Bot", 800, new byte[] {0, 0, 0})
+            bot.printValue();
+        }
+    </pre>
     <footer>
         <a href="index.html">
             <div class="exit">
