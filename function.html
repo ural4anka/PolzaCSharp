@@ -5,8 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Функции | Методы класса</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1 align="center">Функции | Методы класса</h1>
+    <p>Функция находится вне класса, а метод он внутри класса</p>
+    <p>Создание метода, осуществляется внутри класса и не внутри другого метода</p>
+    <p>Объявление метода:</p>
+    <pre>
+        модификатор_доступа возвращаемый_тип название_метода(принимаемый_тип_данных название_типа_данных){
+            действие
+        }
+    </pre>
+    <p>Пример:</p>
+    <pre>
+        public static void Print(string word){
+            Console.WriteLine(word);
+        }
+    </pre>
+    <p>Обращение к методу:</p>
+    <pre>
+        static void Main(){
+            Print("Hello!");
+        }
+    </pre>
+    <p>Возврощение значения</p>
+    <pre>
+        static void Main(string[] args)
+        {
+            int a = 4;
+            int b = 5;
+            int res = Summa(a, b);
+            Print("Результат: " + res.ToString());
+        }
+        public static int Summa(int a, int b)
+        {
+            return a + b;
+        }
+        public static void Print(string word)
+        {
+            Console.WriteLine(word);
+        }
+    </pre>
+    <footer>
+        <a href="index.html">
+            <div class="exit">
+                ВЕРНУТЬСЯ НА ГЛАВНУЮ
+            </div>
+        </a>
+    </footer>
 </body>
 </html>

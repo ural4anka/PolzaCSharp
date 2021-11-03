@@ -44,7 +44,7 @@ a {
     margin-top: 40px;
 }
 
-.massiv1, .massiv2, .page1-1, .page1-2{
+.massiv1, .massiv2, .page1-1, .page1-2, .block{
     width: 50%;
 }
 
@@ -67,4 +67,8 @@ footer>a{
     text-align: center;
     width: 150px;
     border: 3px solid #000;
+}
+
+.active{
+    text-decoration: none;
 }

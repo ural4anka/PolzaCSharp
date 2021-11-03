@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с файлами и строками</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 align="center">Работа с файлами и строками</h1>
+    <div class="main">
+        <div class="block">
+            <p>Создание строк</p>
+            <pre>string word = "Hello";</pre>
+            <p>Работа со строкой</p>
+            <pre>word += "!!!";</pre>
+            <p>Любая строка - массив из множества символов</p>
+            <pre>char[] sym = {'s','o','m','e'};</pre>
+            <p>Вывод символа e строки word:</p>
+            <pre>Console.WriteLine(word[1]);</pre>
+            <p>Вывод кол-ва символов строки:</p>
+            <pre>Console.WriteLine(word.Length);</pre>
+            <hr>
+            <h2>Функции для работы со строкой</h2>
+            <p>Добавление символов к строке:</p>
+            <pre>
+    word = String.Convat(word, "!!");
+    Console.WriteLine(word);
+            </pre>
+            <p>Сравнивание строк</p>
+            <pre>
+    Console.WriteLine(String.Convat(word, "Hello"));
+            </pre>
+            <p>Разделение на строки:</p>
+            <pre>
+    string people = "Alex,Bob,John";
+    string[] names = people.Splir(new char[]{','});
+    foreach(string el in names){
+        Console.WriteLine(el);
+    }
+            </pre>
+            <p>Преобразование массива в строку:</p>
+            <pre>
+    string people = "Alex,Bob,John";
+    string[] names = people.Splir(new char[]{','});
+    string name = String.Join(" ", names);
+    Console.WriteLine(name);
+            </pre>
+            <p>Удоление лишних пробелов до или после строки:</p>
+            <pre>
+    string word = "      Hello";
+    Console.WriteLine(word.Trim());
+            </pre>
+            <p>Обрезание строки</p>
+            <pre>
+    Console.WriteLine(word.Substring(0, word.Length - 1));
+            </pre>
+        </div>
+        <div class="block">
+            <h2>Работа с файлами</h2>
+            <p>Чтобы работать с файлами нужно подключить билиотеку IO</p>
+            <pre>using System.IO</pre>
+            <p>Внутри основного метода нужно подключить директиву using</p>
+            <pre>
+    using(){
+
+    }
+            </pre>
+            <p>using служит для создания изолированного кода</p>
+            <p>Объявление для внесения данных:</p>
+            <pre>
+    принимаем данных с консоли или с переменной
+    using(тип_операции название_операции = выделяем_память_под_операцию("название_файла", перечисление.режим_открытия)){
+        переводим текст в байты:
+        1. создаем массив байтов
+        byte[] array = Text.Encoding.Defualt.GetBytes(переменная_которую_переводим_в_байты);
+        2. записываем массив байтов
+        stream.Write(array, отступ 0, до какого элемента будет записанно array.Length);
+    }
+            </pre>
+            <p>Объявление для считывания данных:</p>
+            <pre>
+    using(тип_операции название_операции = обращение_к_глабальному_классу_File.OpenRead("название_файла")){
+        1. создаем массив байтов
+        byte[] array = new byte[создаем длину массива];
+        2. записываем массив байтов
+        stream.Read(куда записываем array, отступ в начале 0, до какого элемента будет записанно array.Length);
+        3. Создаем переменную куда информация из файла будет записываться
+        string textFromFile = Text.Encoding.Defualt.GetString(переменная_которую_переводим_в_строку);
+        4. Выполняем любое действие с этой записью
+        Console.WriteLine(textFromFile);
+    }
+            </pre>
+            <p>Режимы открытия</p>
+            <ol>
+                <li>
+                    <p>Append - открыть файл и добавить информацию в него</p>
+                </li>
+                <li>
+                    <p>Create - открыть файл для его создания</p>
+                </li>
+                <li>
+                    <p>CreateNew - открыть файл для создания, если такого файла не существует</p>
+                </li>
+                <li>
+                    <p>Open - открыте файла, если такого файла несуществует, то будет вызываться ошибка</p>
+                </li>
+                <li>
+                    <p>OpenOrCreate - открыте файла, если такого файла несуществует, то будем его создавать</p>
+                </li>
+                <li>
+                    <p>Truncate - открыте файла для его полной очистки или удаления</p>
+                </li>
+            </ol>
+            <p>Внесение данных:</p>
+            <pre>
+    Console.WriteLine("Введите текст: ");
+    string text = Console.ReadLine();
+    using(FileStream stream = new FileStream("info.txt", FileMode.OpenOrCreate))){
+        byte[] array = Text.Encoding.Defualt.GetBytes(text);
+        stream.Write(array, 0, array.Length);
+    }
+            </pre>
+            <p>Cчитывание данных:</p>
+            <pre>
+    using(FileStream stream1 = File.OpenRead("info.txt")){
+        byte[] array = new byte[stream1.Lenght];
+        stream.Read(array, 0, array.Length);
+        string textFromFile = Text.Encoding.Defualt.GetString(stream1);
+        Console.WriteLine(textFromFile);
+    }
+            </pre>
+            <h1 align="center">Доработать информацию</h1>
+        </div>
+    </div>
+    <footer>
+        <a href="index.html">
+            <div class="exit">
+                ВЕРНУТЬСЯ НА ГЛАВНУЮ
+            </div>
+        </a>
+    </footer>
+</body>
+</html>

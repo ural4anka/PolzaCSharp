@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработчик исключений | Оператор try-catch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 align="center">Обработчик исключений | Оператор try-catch</h1>
+    <div class="main">
+        <div class="block">
+            <p>Объявление оператора try-catch:</p>
+            <pre>
+    try
+    {
+        код который проверяется
+    }
+    catch (ошибка при проверки кода)
+    {
+        действие, если нашлась эта ошибка
+    }
+    catch (ошибка при проверки кода)
+    {
+        действие, если нашлась эта ошибка
+    }
+    finally
+    {
+        Последнее действие, которое будет всегда выполняться
+        Например: выход из базы данных
+    }
+            </pre>
+        </div>
+        <div class="block">
+            <p>Пример:</p>
+            <pre>
+    try
+    {
+        int a, b, res;
+        Console.Write("Введите a:");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите b:");
+        b = Convert.ToInt32(Console.ReadLine());
+        res = a / b;
+        Console.WriteLine("Результат"+res);
+    }
+    catch (DivideByZeroException)
+    {
+        Console.WriteLine("Деление на ноль");
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Вы вели не тот формат");
+    }
+    finally
+    {
+        Console.WriteLine("Выход из базы данных");
+    }
+            </pre>
+        </div>
+    </div>
+    <footer>
+        <a href="index.html">
+            <div class="exit">
+                ВЕРНУТЬСЯ НА ГЛАВНУЮ
+            </div>
+        </a>
+    </footer>
+</body>
+</html>
