@@ -9,6 +9,35 @@
 </head>
 <body>
     <h1 align="center">Аксессоры «get» и «set»</h1>
+    <p>С помощью аксессоров можно задавать значения или их получать</p>
+    <p>Объявление аксессоров</p>
+    <pre>
+        public int weight;
+
+        public int Weight{
+            get{
+                return this.weight;
+            }
+            set{
+                this.weight = value; (параметр по умолчанию)
+            }
+        }
+    </pre>
+    <p>Обращение к акссесору</p>
+    <pre>
+        Class bot = new Class();
+        bot.Weight = -100;
+        Console.WriteLine(bot.Weight);
+    </pre>
+    <p>Отдельный акссесор:</p>
+    <pre>
+        public int Width{ get; set;}
+    </pre>
+    <p>Таким методом можно заприщать и разрешать ввод или получение данных</p>
+    <p>Пример:</p>
+    <pre>
+        public int Width{ private get; set;}
+    </pre>
     <footer>
         <a href="index.html">
             <div class="exit">
