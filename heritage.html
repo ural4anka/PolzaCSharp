@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наследование классов</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 align="center">Наследование классов</h1>
+    <p>Наследование - это когда есть класс родитель и второй класс, который будет все наследовать от родителя</p>
+    <pre>
+        using System;
+        using System.Collections.Generic;
+        using System.Text;
+
+        namespace ConsoleApp3
+        {
+            class Killer: Robot <-- Killer наследуюется от этого класса
+            {
+                public int Health{ get; set;}
+
+                public Killer{}
+
+                public Killer(string name, int weight, byte[] coordinates) : base(name, weight, coordinates){
+                    this.Health = health;
+                    base.printValue();
+                }
+
+                public void Lazer(){
+                    Console.WriteLine("Лазер стреляет");
+                }
+            }
+        }
+    </pre>
+    <p>
+        base - это обращение к классу родителю. 
+        <br>: base(name, weight, coordinates) в этом случае происходит передача параметров. 
+        <br>base.printValue(); обращение к методу родителя
+    </p>
+    <p>Наследование происходит от одного класса. В C++ множественное наследование.</p>
+    <hr>
+    <p>protected - доступен в классе родителя и в классе наследника</p>
+    <pre>
+        class Robot{
+            private string name;
+            private string name;
+            private int weight;
+            private byte[] coordinates;
+            protected string surname;
+    
+            public Robot(string name, int weight, byte[] coordinates)
+            {
+                this.name = name;
+                this.weight = weight;
+                this.coordinates = coordinates;
+            }
+    
+            public void setValue(string name, int weight, byte[] coordinates)
+            {
+                this.name = name;
+                this.weight = weight;
+                this.coordinates = coordinates;
+            }
+    
+            public void printValue()
+            {
+                Console.Write(name + "weight" + this.weight + ", coordinates:");
+                foreach (byte el in this.coordinates)
+                {
+                    Console.Write(el+ " ");
+                }
+            }
+        }
+        class Killer : Robot{
+            public int Health { get; set; }
+
+            public Killer(string name, int weight, byte[] coordinates, int health) : base(name, weight, coordinates)
+            {
+                this.Health = health;
+                base.printValue();
+            }
+
+            public void Lazer()
+            {
+                base.surname = "Bob";
+                Console.WriteLine();
+                Console.WriteLine($"Лазер {base.surname}'s стреляет ");
+            }
+        }
+        class Main(){
+            Killer killer = new Killer("Bot", 800, new byte[] { 0, 0, 0 }, 100);
+            killer.Lazer();
+        }
+    </pre>
+    <footer>
+        <a href="index.html">
+            <div class="exit">
+                ВЕРНУТЬСЯ НА ГЛАВНУЮ
+            </div>
+        </a>
+    </footer>
+</body>
+</html>
