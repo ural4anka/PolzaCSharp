@@ -73,8 +73,37 @@
         }
             </pre>
         </div>
-
     </div>
+    <hr>
+    <p>Вывод главной диагоноли:</p>
+    <pre>
+        for ( i = 0; i < N; i++ ){
+            Console.WriteLine(A[i,i]);
+        }
+    </pre>
+    <p>Вывод побочной диагоноли:</p>
+    <pre>
+        for ( i = 0; i < N; i++){
+            Console.WriteLine(A[i, N-i-1 ]);
+        }
+    </pre>
+    <p>Нахождение суммы элементов, стоящих на главной диагонали и ниже ее:</p>
+    <pre>
+        Sum = 0;
+        for ( i = 0; i < N; i++ ){
+            for ( j = 0; j <= i; j++ ){
+                Sum += A[i, j];
+            }
+        }
+    </pre>
+    <p>Перестановка строк или столбцов. В матрице из N строк и M столбцов переставить 1-ую и 3-ю строки:</p>
+    <pre>
+        for ( j = 0; j <= M; j++ ) {
+            int c = A[1, j];
+            A[1, j] = A[3, j];
+            A[3, j] = c;
+        }          
+    </pre>
     <footer>
         <a href="index.html">
             <div class="exit">
