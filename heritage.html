@@ -21,8 +21,6 @@
             {
                 public int Health{ get; set;}
 
-                public Killer{}
-
                 public Killer(string name, int weight, byte[] coordinates) : base(name, weight, coordinates){
                     this.Health = health;
                     base.printValue();
@@ -51,13 +49,6 @@
             protected string surname;
     
             public Robot(string name, int weight, byte[] coordinates)
-            {
-                this.name = name;
-                this.weight = weight;
-                this.coordinates = coordinates;
-            }
-    
-            public void setValue(string name, int weight, byte[] coordinates)
             {
                 this.name = name;
                 this.weight = weight;
